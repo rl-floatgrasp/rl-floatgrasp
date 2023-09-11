@@ -8,29 +8,47 @@ The paper introduces a novel approach applying deep reinforcement learning to en
 
 For more information, please see: [https://rl-floatgrasp.github.io/](https://rl-floatgrasp.github.io/)
 
-## Start the ROS MoveIt motion planning tool in Docker
+## Installation
+
+### Build ROS MoveIt Motion Planning in Docker
 
 On command line, run:
 ```
-sudo docker build  --no-cache -t unity-robotics:pick-and-place -f docker/Dockerfile .
-sudo docker run -it --rm -p 10000:10000 unity-robotics:pick-and-place-test /bin/bash
-```
-
-When inside the container, run:
-```
-roslaunch niryo_moveit point_to_point.launch
+sudo docker build --no-cache -t unity-robotics:pick-and-place -f docker/Dockerfile .
 ```
 
 ## Run the training
 
-On command line, run:
+Run the `unity-robotics:pick-and-place` Docker container:
 ```
-python train.py --nsubsteps 15 --max-timesteps 25 --n-episodes 10 --n-epochs 40 --reward-type dense --batch-size 1024 --n-test-rollouts 10 --file-name ./simulation/build/train/UnderwaterArm --polyak 0.9
+sudo docker run -it --rm -p 10000:10000 unity-robotics:pick-and-place /bin/bash
+```
+
+When inside the container, launch `point_to_point` from the `niryo_moveit` package: 
+```
+roslaunch niryo_moveit point_to_point.launch
+```
+
+On command line, run to start the training:
+```
+python train.py --nsubsteps 15 \
+                --max-timesteps 25 \
+                --n-episodes 10 \
+                --n-epochs 40 \
+                --reward-type dense \
+                --batch-size 1024 \
+                --n-test-rollouts 10 \
+                --polyak 0.9 \
+                --file-name ./simulation/build/train/UnderwaterArm 
 ```
 
 ## Run the testing
 
 On command line, run:
 ```
-python test.py  --nsubsteps 15 --max-timesteps 50 --reward-type dense --file-name ./simulation/build/UnderwaterArm --load-dir RefinedUnderwaterEnv/model_default_2023-08-26-21-19-33.pt 
+python test.py  --nsubsteps 15 \
+                --max-timesteps 50 \
+                --reward-type dense \
+                --file-name ./simulation/build/UnderwaterArm \
+                --load-dir RefinedUnderwaterEnv/model_default_2023-08-26-21-19-33.pt 
 ```
