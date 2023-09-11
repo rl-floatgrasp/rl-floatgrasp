@@ -1,0 +1,4 @@
+NiryoMoveitJoints joints_input
+geometry_msgs/Pose finish_pose
+---
+moveit_msgs/RobotTrajectory trajectory
