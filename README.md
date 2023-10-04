@@ -17,22 +17,6 @@ For more information, please see: [https://rl-floatgrasp.github.io/](https://rl-
 
 ## Installation
 
-### Environment
-
-The code is tested on Ubuntu 20.04 with Python 3.10.9 and PyTorch 1.11.0+cu102.
-
-Set up a virtual environment with Python 3.10.9:
-```nash
-python3 -m venv rl_floatgrasp
-source rl_floatgrasp/bin/activate
-pip install --upgrade pip
-```
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
 ### Build ROS MoveIt Motion Planning in Docker
 
 On command line, run:
