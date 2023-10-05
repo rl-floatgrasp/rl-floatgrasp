@@ -78,7 +78,7 @@ class UnderwaterEnv:
             'desired_goal': get_obs['desired_goal']
         }
         reward = get_obs['reward']
-        is_done = self._is_terminal()
+        is_done = self._is_terminal() and reward < 0.001 # hard code the threshold for sparse reward for now
         info = {
             'is_success': is_done,
         }
