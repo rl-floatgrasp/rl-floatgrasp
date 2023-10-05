@@ -178,6 +178,7 @@ class ddpg_agent:
                         # print(f"epoch: {epoch}, cycle: {cycle}, t: {t}", "ep_obs: ", len(ep_obs), "ep_ag: ", len(ep_ag), "ep_g: ", len(ep_g), "ep_actions: ", len(ep_actions), "reward: ")
 
                         if is_done:
+                            print("========= is_done =========")
                             observation = self.env.reset()
                             obs = observation['observation']
                             ag = observation['achieved_goal']
