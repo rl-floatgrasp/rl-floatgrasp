@@ -159,8 +159,11 @@ class ddpg_agent:
                         # if gripper is not moving, then reset (because of error from the MoveIt)
                         if np.linalg.norm(obs_new[:3] - obs[:3]) < 0.0001:
                             print("========= obs_new is nearly identical to obs, reset =========")
-                            reset = True
-                            break
+                            t -= 1
+                            obs = obs_new
+                            ag = ag_new
+                            g = g_new
+                            continue
 
                         ep_obs.append(obs.copy())
                         ep_ag.append(ag.copy())
