@@ -71,7 +71,7 @@ class UnderwaterEnv:
             if self._is_terminal():
                 break
             self.env.step()
-        get_obs = self.get_obs(self._is_terminal())
+        get_obs = self.get_obs()
         obs = {
             'observation': get_obs['observation'],
             'achieved_goal': get_obs['achieved_goal'],
@@ -93,12 +93,12 @@ class UnderwaterEnv:
     def close(self):
         self.env.close()
 
-    def get_obs(self, is_terminal=False):
-        decision_steps, terminal_steps = self.env.get_steps(self.behavior_name)
+    def get_obs(self):
+        decision_steps, _ = self.env.get_steps(self.behavior_name)
         obs = decision_steps.obs[0]
         achieved_goal = obs[0][0:3] 
         desired_goal = obs[0][3:6]
-        reward = terminal_steps.reward[0] if is_terminal else self._get_single_reward(achieved_goal, desired_goal)
+        reward = self._get_single_reward(achieved_goal, desired_goal)
         return {
             'observation': obs[0],
             'achieved_goal': achieved_goal,
