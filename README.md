@@ -7,7 +7,7 @@ This repository contains the code for the paper "Reinforcement learning techniqu
 </p>
 
 
-The paper introduces a novel approach applying deep reinforcement learning to enable a robotic arm with 6 degrees of freedom to adeptly grasp a dynamically moving object within a 3D space, yielding superior outcomes over benchmark methods, as showcased through experimental validation in the Unity simulator. Below is the diagram of the proposed approach.
+The paper introduces a novel approach applying deep reinforcement learning to enable a robotic arm with 6 degrees of freedom to adeptly grasp a dynamically moving object within a 3D space, as showcased through experimental validation in the Unity simulator. Below is the diagram of the proposed approach.
 
 <p align="center">
     <img src="media/rl-grasp-diagram.png" />
