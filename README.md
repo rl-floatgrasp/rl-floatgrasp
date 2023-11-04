@@ -73,7 +73,7 @@ python test.py  --nsubsteps 15 \
                 --max-timesteps 50 \
                 --reward-type dense \
                 --file-name ./simulation/build/SPEED0002/UnderwaterArm \
-                --load-dir RefinedUnderwaterEnv/model_default_2023-08-26-21-19-33.pt 
+                --load-dir models/model_default_2023-08-26-21-19-33.pt 
 ```
 
 ## Contact
