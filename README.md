@@ -78,6 +78,6 @@ python test.py  --nsubsteps 15 \
 
 ## Contact
 
-Should you have any questions or require further clarification, please do not hesitate to reach out to the primary researcher, K. Nguyen.
+Should you have any questions or require further clarification, please do not hesitate to reach out to the primary researcher, K. Nguyen at ktn222@lehigh.edu.
 
 We appreciate your interest in RL-FloatGrasp and look forward to any contributions or feedback.
